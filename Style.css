@@ -83,8 +83,10 @@ body {
     position: relative;
     isolation: isolate;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
+    padding-block: clamp(28px, 6vh, 70px);
+    box-sizing: border-box;
 }
 /* #endregion */
 
@@ -250,12 +252,13 @@ body::selection-overlay {
     display: flex;
     gap: var(--gap-grid);
     width: min(95vw, 1280px);
-    height: calc(100vh - 190px);
-    margin: 110px auto 80px;
+    height: auto;
+    min-height: 0;
+    margin: auto;
     align-items: stretch;
     position: relative;
     z-index: 10;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .column {
@@ -1236,6 +1239,13 @@ body::selection-overlay {
         overflow-y: auto;
     }
 
+    body {
+        align-items: center;
+        justify-content: center;
+        padding-block: 56px;
+        box-sizing: border-box;
+    }
+
     /* bolas */
     .ball {
         position: fixed;
@@ -1317,9 +1327,9 @@ body::selection-overlay {
 
     .grid-container {
         width: min(96vw, 1200px);
-        height: calc(100vh - 175px);
-        margin: 100px auto 70px;
-    }
+        height: auto;
+        min-height: 0;
+        margin: 0 auto;    }
 }
 
 /* notebook 14" / telas mais baixas */
@@ -1336,9 +1346,11 @@ body::selection-overlay {
         overflow-y: auto;
     }
 
-    /* texto de fundo */
-    .bg-text-loop {
-        display: none;
+    body {
+        align-items: center;
+        justify-content: center;
+        padding-block: 44px;
+        box-sizing: border-box;
     }
 
     body::after {
@@ -1347,6 +1359,11 @@ body::selection-overlay {
 
     body::before {
         opacity: 0.45;
+    }
+
+    /* texto de fundo */
+    .bg-text-loop {
+        display: none;
     }
 
     .ball-1 {
@@ -1415,14 +1432,9 @@ body::selection-overlay {
     }
 
     .grid-container {
-        margin-top: 84px;
-        margin-bottom: 28px;
-    }
-
-    .grid-container {
-        width: min(96vw, 1120px);
-        height: calc(100vh - 160px);
-        margin: 92px auto 62px;
+        height: auto;
+        min-height: 0;
+        margin: 0 auto;
     }
 
     .card {
@@ -1907,7 +1919,14 @@ body::selection-overlay {
         --text-hero-name: var(--font-lg);
     }
 
-    .grid-container { height: calc(100vh - 150px); margin: 86px auto 56px; }
+    body {
+        align-items: center;
+        justify-content: center;
+        padding-block: 34px;
+        box-sizing: border-box;
+    }
+
+    .grid-container { height: auto; min-height: 0; margin: 0 auto; }
     .card { border-radius: 18px; }
     .carousel-container { height: 150px; }
     .experience-card { max-height: 360px; }
