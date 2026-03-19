@@ -1670,10 +1670,12 @@ body::selection-overlay {
     }
 
     body::after {
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        opacity: 0.8;
-        z-index: 8;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        mask-image: none;
+        -webkit-mask-image: none;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.18);
     }
 
     .grid-container {
@@ -1694,10 +1696,33 @@ body::selection-overlay {
 
     .card {
         border-radius: 12px;
+        filter: none;
+        animation: revealCardMobile 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    }
+
+    @keyframes revealCardMobile {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: none;
+        }
     }
 
     .column {
         gap: var(--space-md);
+    }
+
+    .card,
+    .experience-card,
+    .experience-scroll {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+
+    .experience-scroll {
+        -webkit-overflow-scrolling: touch;
     }
 
     .card p,
