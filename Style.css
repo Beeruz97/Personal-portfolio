@@ -125,6 +125,10 @@ body::before {
     z-index: 2;
 }
 
+body::selection-overlay {
+    content: none;
+}
+
 /* Modal (pré-visualização da foto) */
 .image-modal {
     position: fixed;
@@ -748,13 +752,13 @@ body::before {
     left: 50%;
     transform: translateX(-50%) translateY(-100px);
 
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 14px;
 
-    min-height: 50px;
-    max-width: min(550px, calc(100vw - 30px));
-    width: auto;
+    width: clamp(250px, 20vw, 320px);
+    min-height: 45px;
+    max-width: calc(100vw - 33px);
 
     padding: 7px 20px;
     border-radius: 16px;
@@ -1270,10 +1274,10 @@ body::before {
     /* player*/
     .dynamic-island {
         top: 10px;
+        width: clamp(500px, 40vw, 620px);
+        max-width: calc(100vw - 32px);
         padding: 7px 14px;
         gap: 10px;
-        max-width: min(460px, calc(100vw - 32px));
-        width: auto;
         border-radius: 14px;
     }
 
@@ -1368,9 +1372,9 @@ body::before {
         top: 8px;
         left: 50%;
         transform: translateX(-50%);
-        max-width: min(410px, calc(100vw - 32px));
+        width: clamp(430px, 42vw, 520px);
+        max-width: calc(100vw - 32px);
         height: 48px;
-        width: auto;
         padding: 7px 14px;
         gap: 10px;
         border-radius: 14px;
@@ -1433,10 +1437,11 @@ body::before {
         --gap-card: var(--space-sm);
         --padding-card: var(--space-lg);
 
-        --text-body: var(--font-sm);
-        --text-card-title: var(--font-md);
-        --text-section-title: var(--font-sm);
-        --text-hero-name: var(--font-lg);
+        --text-body: 0.84rem;
+        --text-muted: 0.68rem;
+        --text-card-title: 0.95rem;
+        --text-section-title: 0.8rem;
+        --text-hero-name: 1.32rem;
     }
 
     body, html {
@@ -1444,6 +1449,10 @@ body::before {
         overflow-y: auto;
         display: block;
         min-height: 100vh;
+
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.34), rgba(0, 0, 0, 0.34));
+        background-attachment: fixed;
     }
 
     body::after {
@@ -1490,6 +1499,11 @@ body::before {
         -webkit-backdrop-filter: none;
         padding: 0;
         padding-inline: 4px;
+    }
+
+    .card:hover {
+        background: none;
+        border-color: none;
     }
 
 
@@ -1550,9 +1564,9 @@ body::before {
     /* player */
     .dynamic-island {
         top: 10px;
-        max-width: min(460px, calc(100vw - 32px));
+        width: clamp(420px, 72vw, 560px);
+        max-width: calc(100vw - 32px);
         min-height: 50px;
-        width: auto;
         padding: 7px 16px;
         gap: 12px;
         border-radius: 15px;
@@ -1578,6 +1592,42 @@ body::before {
         flex-basis: 26px;
     }
 
+    .bio-content p,
+    .card p,
+    .card li,
+    .exp-text {
+        font-size: 0.84rem;
+        line-height: 1.62;
+    }
+
+    .bio-content h2 {
+        font-size: 1.32rem;
+        line-height: 1.12;
+    }
+
+    .spec-card h3,
+    .portfolio-card h3,
+    .social-card h3 {
+        font-size: 0.8rem;
+        letter-spacing: 1.2px;
+    }
+
+    .exp-title {
+        font-size: 1.02rem;
+    }
+
+    .exp-subtitle {
+        font-size: 0.84rem;
+    }
+
+    .exp-time,
+    .live-location,
+    .copyright,
+    .matricula,
+    .tag,
+    .live-label {
+        font-size: 0.68rem;
+    }
 }
 
 /* mobile */
@@ -1598,12 +1648,17 @@ body::before {
         overflow-y: auto;
         display: block;
         min-height: 100vh;
+
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55));
+        background-attachment: fixed;
     }
 
     body::after {
-        backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         opacity: 0.8;
+        z-index: 8;
     }
 
     .grid-container {
@@ -1655,6 +1710,11 @@ body::before {
 
         padding: 0;
         padding-bottom: 14px;
+    }
+
+    .card:hover {
+        background: none;
+        border-color: none;
     }
 
     .photo-wrapper {
@@ -1709,9 +1769,9 @@ body::before {
     }
 
     .bio-content p {
-        font-size: 0.84rem;
-        line-height: 1.72;
-        max-width: 38ch;
+        font-size: 0.8rem;
+        line-height: 1.6;
+        max-width: 46ch;
         margin: 0 auto;
         opacity: 0.9;
     }
@@ -1791,10 +1851,10 @@ body::before {
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
-        width: auto;
-        max-width: min(380px, calc(100vw - 28px));
-        min-height: 48px;
-        padding: 7px 14px;
+        width: clamp(220px, 60vw, 280px);
+        max-width: calc(100vw - 28px);
+        min-height: 42px;
+        padding: 5px 14px;
         gap: 12px;
         border-radius: 16px;
     }
