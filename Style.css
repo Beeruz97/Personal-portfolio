@@ -140,6 +140,7 @@ body::selection-overlay {
     justify-content: center;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     z-index: 9999;
     padding: 1.5rem;
     overflow: hidden; /* Evita scroll e força a imagem a caber no viewport */
@@ -283,6 +284,7 @@ body::selection-overlay {
     padding: 25px;
     color: white;
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
 
     display: flex;
     box-sizing: border-box;
@@ -295,7 +297,6 @@ body::selection-overlay {
 
     opacity: 0;
     transform: translateY(30px);
-    filter: blur(10px);
     animation: revealCard 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 
@@ -606,6 +607,7 @@ body::selection-overlay {
     cursor: pointer;
     pointer-events: auto;
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
     transition: background 0.2s;
 }
 
@@ -1355,6 +1357,7 @@ body::selection-overlay {
 
     body::after {
         backdrop-filter: blur(6px);
+        -webkit-backdrop-filter: blur(6px);
     }
 
     body::before {
