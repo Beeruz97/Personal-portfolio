@@ -750,13 +750,13 @@ body::before {
 
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 
-    min-height: 52px;
-    max-width: min(420px, calc(100vw - 32px));
+    min-height: 50px;
+    max-width: min(550px, calc(100vw - 30px));
     width: auto;
 
-    padding: 8px 18px;
+    padding: 7px 20px;
     border-radius: 16px;
 
     background: rgba(77, 76, 76, 0.2);
@@ -956,7 +956,7 @@ body::before {
 }
 
 .live-status-bar > * {
-    width: 100%;
+    width: auto;
     display: flex;
     justify-content: center;
 }
@@ -1272,7 +1272,7 @@ body::before {
         top: 10px;
         padding: 7px 14px;
         gap: 10px;
-        max-width: calc(100vw - 24px);
+        max-width: min(460px, calc(100vw - 32px));
         width: auto;
         border-radius: 14px;
     }
@@ -1368,11 +1368,11 @@ body::before {
         top: 8px;
         left: 50%;
         transform: translateX(-50%);
-        max-width: min(360px, calc(100vw - 28px));
-        height: 50px;
+        max-width: min(410px, calc(100vw - 32px));
+        height: 48px;
         width: auto;
-        padding: 8px 12px;
-        gap: 8px;
+        padding: 7px 14px;
+        gap: 10px;
         border-radius: 14px;
     }
 
@@ -1496,6 +1496,9 @@ body::before {
     /* status bar */
     .live-status-bar {
         position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
         z-index: 10;
         margin: 24px auto 0;
         padding: 0 16px 24px;
@@ -1547,10 +1550,11 @@ body::before {
     /* player */
     .dynamic-island {
         top: 10px;
-        max-width: min(420px, calc(100vw - 24px));
+        max-width: min(460px, calc(100vw - 32px));
+        min-height: 50px;
         width: auto;
-        padding: 8px 14px;
-        gap: 10px;
+        padding: 7px 16px;
+        gap: 12px;
         border-radius: 15px;
     }
 
@@ -1719,10 +1723,15 @@ body::before {
     /* status bar */
     .live-status-bar {
         position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+
         z-index: 10;
         margin: 0 auto 18px;
-        padding: 18px 14px 20px;
         width: min(94vw, 520px);
+        box-sizing: border-box;
+        padding: 18px 0 20px;
 
         display: flex;
         flex-direction: column;
@@ -1740,6 +1749,7 @@ body::before {
         display: flex;
         justify-content: center;
         align-items: center;
+        margin: 0 auto;
     }
 
     .live-left,
@@ -1782,17 +1792,17 @@ body::before {
         left: 50%;
         transform: translateX(-50%);
         width: auto;
-        max-width: min(380px, calc(100vw - 45px));
-        min-height: 54px;
-        padding: 10px 16px;
-        gap: 10px;
+        max-width: min(380px, calc(100vw - 28px));
+        min-height: 48px;
+        padding: 7px 14px;
+        gap: 12px;
         border-radius: 16px;
     }
 
     .vinyl-container {
-        width: 34px;
-        height: 34px;
-        flex-basis: 34px;
+        width: 35px;
+        height: 35px;
+        flex-basis: 35px;
     }
 
     .island-content {
@@ -1801,6 +1811,7 @@ body::before {
 
     .island-track {
         font-size: 0.76rem;
+        line-height: 1.02;
     }
 
     .island-artist {
@@ -1810,13 +1821,13 @@ body::before {
 
     .island-visualizer {
         gap: 2px;
-        height: 13px;
+        height: 12px;
     }
 
     #play-btn {
-        width: 26px;
-        height: 26px;
-        flex-basis: 26px;
+        width: 27px;
+        height: 27px;
+        flex-basis: 27px;
     }
 
     .volume-wrapper {
