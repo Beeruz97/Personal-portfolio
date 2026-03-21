@@ -1799,6 +1799,11 @@ body::before {
         width: 22px;
     }
 
+    .close-modal {
+        top: -35px;
+        right: 20px;
+    }
+
     .bio-content h2 {
         margin: 0 0 10px 0;
         line-height: 1.12;
